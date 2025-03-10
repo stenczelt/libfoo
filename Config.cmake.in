@@ -2,3 +2,4 @@
 @PACKAGE_INIT@
 
 include ( "${CMAKE_CURRENT_LIST_DIR}/MathFunctionsTargets.cmake" )
+set(MF_INCLUDE_DIR "@CMAKE_INSTALL_PREFIX@/include/mf1")

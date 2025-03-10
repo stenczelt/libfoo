@@ -1,0 +1,2 @@
+add_executable(example_02 main_example.cpp)
+target_link_libraries(example_02 PRIVATE MathFunctions)

@@ -122,3 +122,9 @@ install(FILES
 export(EXPORT MathFunctionsTargets
   FILE "${CMAKE_CURRENT_BINARY_DIR}/MathFunctionsTargets.cmake"
 )
+
+option(BAR_BUILD_EXAMPLES "Enable building examples" OFF)
+if(BAR_BUILD_EXAMPLES)
+  add_subdirectory(examples)
+endif()
+

@@ -35,6 +35,6 @@ include(CMakePackageConfigHelpers)
 configure_package_config_file(
         cmake/FooConfig.cmake.in
         ${CMAKE_CURRENT_BINARY_DIR}/cmake/FooConfig.cmake
-#        INSTALL_DESTINATION lib/cmake/foo
+        INSTALL_DESTINATION lib/cmake/foo
 )
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/FooConfig.cmake DESTINATION lib/cmake/foo)

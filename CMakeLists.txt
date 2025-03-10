@@ -9,8 +9,8 @@ add_subdirectory(src)
 add_subdirectory(fortran)
 
 # Optionally add examples and tests when building from source
-option(FOO_BUILD_TESTS "Enable building tests" ON)
-option(FOO_BUILD_EXAMPLES "Enable building examples" ON)
+option(FOO_BUILD_TESTS "Enable building tests" OFF)
+option(FOO_BUILD_EXAMPLES "Enable building examples" OFF)
 
 if(FOO_BUILD_TESTS)
     enable_testing()
@@ -25,7 +25,10 @@ endif()
 install(DIRECTORY ${CMAKE_SOURCE_DIR}/include/ DESTINATION include)
 
 # Install CMake package configuration
-install(EXPORT FooTargets NAMESPACE foo:: DESTINATION lib/cmake/foo)
+install(EXPORT FooTargets
+        NAMESPACE foo::
+        DESTINATION lib/cmake/foo
+)
 
 # Generate Config.cmake file
 include(CMakePackageConfigHelpers)

@@ -21,6 +21,9 @@ if(FOO_BUILD_EXAMPLES)
     add_subdirectory(examples)
 endif()
 
+# install headers
+install(DIRECTORY ${CMAKE_SOURCE_DIR}/include/ DESTINATION include)
+
 # Install CMake package configuration
 install(EXPORT FooTargets NAMESPACE foo:: DESTINATION lib/cmake/foo)
 

@@ -1,7 +1,7 @@
-// #include "library.h"
+#include "foo.h"
 
 #include <iostream>
 
-void hello() {
-    std::cout << "Hello, World!" << std::endl;
+void hello_foo() {
+    std::cout << "Hello, World from Foo!" << std::endl;
 }

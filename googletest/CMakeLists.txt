@@ -33,6 +33,8 @@ if (COMMAND pre_project_set_up_hermetic_build)
   pre_project_set_up_hermetic_build()
 endif()
 
+set(hello_gt_variable "I am hello_gt_variable")
+
 ########################################################################
 #
 # Project-wide settings.

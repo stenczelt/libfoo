@@ -12,6 +12,9 @@ add_subdirectory(fortran)
 option(FOO_BUILD_TESTS "Enable building tests" OFF)
 option(FOO_BUILD_EXAMPLES "Enable building examples" OFF)
 
+set(FOO_TOPLEVEL_CUS_VAR "hello!")
+
+
 if(FOO_BUILD_TESTS)
     enable_testing()
     add_subdirectory(tests)

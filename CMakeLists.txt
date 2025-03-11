@@ -9,18 +9,8 @@ target_include_directories(mace_main PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:include>)
 
-# Define the variable
-set(MACE_VERSION ${PROJECT_VERSION})
-
-# Generate a maceConfig.cmake file
-configure_file(
-        ${CMAKE_CURRENT_SOURCE_DIR}/cmake/maceConfig.cmake.in
-        ${CMAKE_CURRENT_BINARY_DIR}/maceConfig.cmake
-        @ONLY
-)
-
-# Install the generated config file
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/maceConfig.cmake DESTINATION lib/cmake/mace)
+# Export MACE_VERSION as a cache variable so it's available in parent projects
+set(MACE_VERSION ${PROJECT_VERSION} CACHE STRING "Mace library version")
 
 install(TARGETS mace_main EXPORT maceConfig
         INCLUDES DESTINATION include)

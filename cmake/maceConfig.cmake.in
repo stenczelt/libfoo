@@ -1,0 +1,6 @@
+@PACKAGE_INIT@
+
+set(MACE_VERSION "@MACE_VERSION@")
+
+include("${CMAKE_CURRENT_LIST_DIR}/maceConfig.cmake")
+include("${CMAKE_CURRENT_LIST_DIR}/maceTargets.cmake")

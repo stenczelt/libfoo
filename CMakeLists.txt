@@ -9,13 +9,21 @@ target_include_directories(mace_main PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:include>)
 
+# Define the variable
+set(MACE_VERSION ${PROJECT_VERSION})
+
+# Generate a maceConfig.cmake file
+configure_file(
+        ${CMAKE_CURRENT_SOURCE_DIR}/cmake/maceConfig.cmake.in
+        ${CMAKE_CURRENT_BINARY_DIR}/maceConfig.cmake
+        @ONLY
+)
+
+# Install the generated config file
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/maceConfig.cmake DESTINATION lib/cmake/mace)
+
 install(TARGETS mace_main EXPORT maceConfig
         INCLUDES DESTINATION include)
 
 install(EXPORT maceConfig NAMESPACE mace:: DESTINATION lib/cmake/mace)
 install(DIRECTORY include/ DESTINATION include)
-
-
-# example program here
-add_executable(eg_main program.cpp)
-target_link_libraries(eg_main mace::main)

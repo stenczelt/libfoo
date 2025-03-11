@@ -14,3 +14,8 @@ install(TARGETS mace_main EXPORT maceConfig
 
 install(EXPORT maceConfig NAMESPACE mace:: DESTINATION lib/cmake/mace)
 install(DIRECTORY include/ DESTINATION include)
+
+
+# example program here
+add_executable(eg_main program.cpp)
+target_link_libraries(eg_main mace::main)

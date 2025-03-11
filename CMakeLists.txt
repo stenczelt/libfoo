@@ -41,3 +41,9 @@ configure_package_config_file(
         INSTALL_DESTINATION lib/cmake/foo
 )
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/FooConfig.cmake DESTINATION lib/cmake/foo)
+
+
+# magic
+add_library(foo::foo ALIAS foo)
+add_library(foo::foo_f90_wrapper ALIAS foo_f90_wrapper)
+set(foo_f90_path "${CMAKE_CURRENT_SOURCE_DIR}/fortran/foo_f90_wrapper.f90" CACHE STRING "foo.f90 path to access directly")
